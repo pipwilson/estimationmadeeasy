@@ -1,0 +1,14 @@
+<ol id="lists">
+#{list items:_issues, as:'issue'}
+    <li>${issue}<br>
+	#{if _myvotes != null && _myvotes.containsKey(issue)} You voted ${_myvotes.get(issue)} #{/if}
+	#{else}
+		#{form @Poker.vote(issue)}
+			<input type="radio" name="score" value="1">1
+			<input type="radio" name="score" value="2">2
+			<input type="submit" value="vote">
+		#{/form}	
+	#{/else}
+	</li>
+#{/list}
+</ol>

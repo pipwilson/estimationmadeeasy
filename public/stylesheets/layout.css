@@ -1,0 +1,35 @@
+* {
+  font-family: Arial;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+  text-align: left;
+}
+
+#content {
+  width: 900px;
+  margin: auto;
+  padding: 15px 30px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+}
+
+#content h3 {
+  margin: 5px;
+  font-size: 150%;
+}
+
+ol > li {
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+select {
+  font-size: 120%;
+}

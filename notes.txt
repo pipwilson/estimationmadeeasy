@@ -1,0 +1,16 @@
+Planning Poker
+
+A simple application by Phil Wilson, 2010
+MIT licensed.
+http://philwilson.org
+
+Uses Play 1.0 http://www.playframework.org/documentation/1.0/home
+Play 1.0.1 release notes http://www.playframework.org/documentation/1.0-trunk/releasenotes
+
+Jira XML-RPC API http://docs.atlassian.com/software/jira/docs/api/rpc-jira-plugin/latest/com/atlassian/jira/rpc/xmlrpc/XmlRpcService.html
+
+GAE User object http://code.google.com/appengine/docs/java/javadoc/com/google/appengine/api/users/User.html
+
+Siena Getting Started http://www.sienaproject.com/documentation-getting-started.html
+
+Siena source http://siena.googlecode.com/svn/trunk/siena/src/main/java/siena/Model.java

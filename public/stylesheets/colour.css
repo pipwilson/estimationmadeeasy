@@ -1,0 +1,61 @@
+body {
+  background: #365069;
+  /* background-image: -webkit-gradient(linear, 0% 0%, 0% 80%, from(#426180), to(#1A2733), color-stop(.8,#233545)); */
+  background-image: url(/public/images/stripe_a313191e5a992f60dba78bdd7a924d17.png);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #E4E4E4;
+  font-size: 200%;
+  text-shadow: 1px 1px 1px #365069;
+}
+
+h1 {
+  font-size: 300%;
+  text-shadow: 3px 3px 3px #365069;
+}
+
+#content {
+  background-color: white;
+  border: 3px solid #F4F4F4;
+}
+
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+  color: #365069;
+}
+
+input[type="submit"] {
+  /*
+  color: #529214;
+  border-radius: 5px;
+  border: 1px solid #9B9B99;
+  padding: 2px 7px;
+  font-size: 0.7em;
+  */
+}
+
+ol {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+ol > li {
+  /* background-color: #F8F8F8; */
+}
+
+ol > li.incomplete {
+  border-left: 6px solid blue;
+}
+
+ol > li.voted {
+  border-left: 6px solid #CCCCFF;
+}
+
+ol > li.estimated {
+  border-left: 6px solid green;
+}
+
+ol > li.discussion {
+  border-left: 6px solid red;
+}

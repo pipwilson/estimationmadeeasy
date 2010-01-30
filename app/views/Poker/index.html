@@ -1,0 +1,76 @@
+#{extends 'main.html' /}
+#{set title:'Estimation Made Easy' /}
+
+#{ifnot gameName}
+    <h2>Name your game of planning poker</h2>
+
+    #{form @Poker.createGame()}
+        <input type="text" name="gameName">
+        <input type="submit" value="Create game">
+    #{/form}
+#{/ifnot}
+#{else}
+    <h2>Playing: ${gameName}</h2>
+
+    <ol id="issues">
+    #{list issues, as:'issue'}
+        #{if issue.myVote().length() > 0} <!-- if I have voted -->            
+            #{if issue.votes.size() == users.size} <!-- and everyone else has also voted-->
+                <li class="estimated"><h3>${issue.getId()}</h3> <!-- set class and list votes -->
+                Estimate is: <b>${issue.getConsensusVote()}</b>
+                <ul>
+                    <li>${issue.myVote()}</li>
+                #{list issue.votes, as:'vote'}
+                    #{if vote.name != nickname}
+                    <li>${vote.name} voted ${vote.score}</li>
+                    #{/if}
+                #{/list}                    
+                </ul>
+            #{/if}
+            #{else} <!-- otherwise just set class and show my vote -->
+                <li class="voted"><h3>${issue.getId()}</h3><br>
+                <p>${issue.myVote()}</p>
+            #{/else}            
+            </li>            
+        #{/if}
+        #{else} <!-- I haven't voted on this issue yet -->
+            <li class="incomplete"><h3>${issue.getId()}</h3><br>
+            #{form @Poker.vote(issue.getId())}
+                <select name="score">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="8">8</option>
+                    <option value="13">13</option>
+                    <option value="21">21</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="0">?</option>
+                    <option value="-1">Tea break!</option>
+                </select>
+                <input type="submit" value="vote">
+            #{/form}
+        #{/else}
+        </li>
+    #{/list}
+    </ol>
+
+    <hr>
+
+    <h3>Add some issues (one ID per line)</h3>
+    #{form @Poker.addIssues()}
+        <textarea name="issues">111
+222
+333</textarea>
+        <input type="submit" value="Add issues">
+    #{/form}
+#{/else}
+
+<h2>Voters</h2>
+
+<ul id="users">
+#{list users, as:'user'}
+    <li>${user} #{if user == nickname} (that's you!) #{/if}</li>
+#{/list}
+</ul>
